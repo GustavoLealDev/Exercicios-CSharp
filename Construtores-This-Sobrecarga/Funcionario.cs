@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Course
 {
-    internal class Funcionarios
+     class Funcionarios
     {
         public string Name { get; set; }    
         public double Salary { get; set; }

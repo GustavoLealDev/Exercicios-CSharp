@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Course
 {
-    internal class Alunos
+     class Alunos
     {
         public double AV1, AV2, AV3;
         public string Nome;

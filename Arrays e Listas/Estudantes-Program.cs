@@ -2,10 +2,6 @@ using System;
 using System.Globalization;
 
 namespace Course
-using System;
-using System.Globalization;
-
-namespace Course
 {
     class Program
     {
@@ -42,12 +38,12 @@ namespace Course
             Console.WriteLine();
             
             Console.WriteLine("Digite o nome do aluno para exclui-lo: ");
-            string nameExc = Console.ReadLine();
-            var estudanteExcluir = list.Find(x => x.Name == nameExc);
+            string ExcAluno = Console.ReadLine();
+            Estudantes ExcluirAluno = list.Find(x => x.Name == ExcAluno);
 
-            if(estudanteExcluir != null)
+            if(ExcluirAluno != null)
             {
-                list.Remove(estudanteExcluir);
+                list.Remove(ExcluirAluno);
                 Console.WriteLine("Estudante excluído!!");
             } else {
                 Console.WriteLine("Estudante não encontrado");

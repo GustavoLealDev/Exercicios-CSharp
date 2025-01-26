@@ -2,6 +2,10 @@ using System;
 using System.Globalization;
 
 namespace Course
+using System;
+using System.Globalization;
+
+namespace Course
 {
     class Program
     {
@@ -29,14 +33,36 @@ namespace Course
                 Console.WriteLine();
             }
 
-
-
-            Console.WriteLine("Alunos / Idades / Nota Final : ");
+            Console.WriteLine("Alunos : ");
             foreach (Estudantes obj in list)
             {
                 Console.WriteLine(obj);
             }
-         
+
+            Console.WriteLine();
+            
+            Console.WriteLine("Digite o nome do aluno para exclui-lo: ");
+            string nameExc = Console.ReadLine();
+            var estudanteExcluir = list.Find(x => x.Name == nameExc);
+
+            if(estudanteExcluir != null)
+            {
+                list.Remove(estudanteExcluir);
+                Console.WriteLine("Estudante excluído!!");
+            } else {
+                Console.WriteLine("Estudante não encontrado");
+            }
+
+            Console.WriteLine();
+
+            Console.WriteLine("Alunos Atualizados : ");
+            foreach (Estudantes obj in list)
+            {
+                Console.WriteLine(obj);
+            }
+
         }
     }
 }
+
+// Adicionei excluir aluno

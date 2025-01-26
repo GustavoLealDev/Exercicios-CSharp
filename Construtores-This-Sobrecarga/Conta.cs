@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Course
 {
-    internal class Conta
+     class Conta
     {
         public int Id { get; private set; } 
         public string Titular { get; private set; }

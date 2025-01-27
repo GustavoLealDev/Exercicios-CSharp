@@ -52,6 +52,25 @@ namespace Course
                         }
                         break;
 
+                    case 3:
+    
+                        Console.Write("Informe o título do livro a ser excluído: ");
+                        string tituloExcluir = Console.ReadLine();
+
+                        Livros ExcluirLivro = list.Find(l => l.Titulo.Equals(tituloExcluir, StringComparison.OrdinalIgnoreCase));
+
+                        if (ExcluirLivro != null)
+                         {
+                        list.Remove(ExcluirLivro);
+                        Console.WriteLine("Livro excluído com sucesso.");
+                            }
+                            else
+                        {
+                            Console.WriteLine("Livro não encontrado.");
+                        }
+                        break;
+                    
+
         } 
     }
 }

@@ -13,10 +13,10 @@ namespace Course
             do
             {
                 Console.WriteLine("Sistema de Cadastro de Livros");
-                Console.WriteLine("1. Cadastrar livro"); 
-                Console.WriteLine("2. Livros a disposição");
-                Console.WriteLine("3. Exclua um livro");
-                Console.WriteLine("4. Sair");
+                Console.WriteLine("1 - Cadastre um livro"); 
+                Console.WriteLine("2 - Livros a disposição");
+                Console.WriteLine("3 - Exclua um livro");
+                Console.WriteLine("4 - Sair do Sistema");
                 Console.WriteLine();
                 Console.Write("Escolha uma opção: ");
                 opcao = int.Parse(Console.ReadLine());
@@ -25,7 +25,7 @@ namespace Course
                 {
                     case 1:
                         
-                        Console.Write("Título: ");
+                        Console.Write("Nome do Livro: ");
                         string titulo = Console.ReadLine();
                         Console.Write("Autor: ");
                         string autor = Console.ReadLine();
@@ -35,6 +35,21 @@ namespace Course
                         double preco = double.Parse(Console.ReadLine());
 
                         list.Add(new Livros(titulo, autor, anoDePublicacao, preco));
+                        break;
+
+                    case 2:
+                        
+                        if (list.Count == 0)
+                        {
+                            Console.WriteLine("Nenhum livro cadastrado.");
+                        }
+                        else
+                        {
+                            foreach (Livros livro in list)
+                            {
+                                Console.WriteLine(livro);
+                            }
+                        }
                         break;
 
         } 

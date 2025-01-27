@@ -70,6 +70,17 @@ namespace Course
                         }
                         break;
                     
+                    case 4:
+                        Console.WriteLine("Saindo...");
+                        break;
+
+                    default:
+                        Console.WriteLine("Opção inválida, tente novamente.");
+                        break;
+                }
+
+                Console.WriteLine();
+            } while (opcao != 4);
 
         } 
     }

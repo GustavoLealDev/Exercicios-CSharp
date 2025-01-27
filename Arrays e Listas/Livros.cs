@@ -22,7 +22,7 @@ namespace Course
             return "Livro : " + Titulo + 
                 ", Autor: " + Autor + 
                 ", Ano: " + AnoDePublicacao + 
-                ", Preço: " + Preco;
+                ", Preço: " + Preco.ToString("F2");
         }
     }
 }

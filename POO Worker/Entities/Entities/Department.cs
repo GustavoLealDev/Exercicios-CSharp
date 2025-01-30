@@ -5,11 +5,11 @@ namespace Course.Entities
 {
     class Department
     {
-        public string Name { get; set; }
+        public string DepartName { get; set; }
 
-        public Department(string name)
+        public Department(string departName)
         {
-            Name = name;
+            DepartName = departName;
         }
     }
 }

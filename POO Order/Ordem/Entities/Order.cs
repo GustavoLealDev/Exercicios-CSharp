@@ -45,14 +45,15 @@ namespace Course.Entities
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("Order Moment: " + Moment.ToString("dd/MM/yyyy HH/mm/ss"));
+            sb.AppendLine("Order Moment: " + Moment.ToString("dd/MM/yyyy HH:mm:ss"));
             sb.AppendLine("Order Status: " + Status);
             sb.AppendLine("Client: " + Client);
+            sb.AppendLine();
             sb.AppendLine("Order Item: ");
             foreach (OrdemItem item in Items) { 
                 sb.AppendLine(item.ToString());
             }
-            sb.AppendLine("Total : $" + Total());
+            sb.AppendLine("Total : $" + Total().ToString("F2"));
             return sb.ToString();   
         }
     }

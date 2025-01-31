@@ -19,7 +19,7 @@
 
         public override string ToString()
         {
-            return "Name: " + Name + ", Email: " + Email + ", BirthDate: " + BirthDate.ToString("dd/MM/yyyy");
+            return Name + " | Email: " + Email + " | BirthDate: " + BirthDate.ToString("dd/MM/yyyy");
         }
     }
 }

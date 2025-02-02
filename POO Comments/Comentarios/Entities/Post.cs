@@ -47,7 +47,5 @@ namespace Course.Entities
             }
             return sb.ToString();
         }
-
-
     }
 }

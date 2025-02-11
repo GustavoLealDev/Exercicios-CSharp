@@ -1,4 +1,6 @@
-﻿namespace Course.Entities
+﻿using Course.Entities.Exeptions;
+
+namespace Course.Entities
 {
      class Account
     {
@@ -12,6 +14,7 @@
         }
         public Account(int accountId, string holder, double balance, double withDrawLimit)
         {
+
             AccountId = accountId;
             Holder = holder;
             Balance = balance;
@@ -25,7 +28,17 @@
 
         public void WithDraw(double amount)
         {
+            if (amount > WithDrawLimit)
+            {
+                throw new AccountExeptions("The amount exceeds withdraw limit");
+            }
+            if(amount > Balance)
+            {
+                throw new AccountExeptions("Not enough balance");
+            }
+            
             Balance = Balance - amount;
         }
+
     }
 }

@@ -4,13 +4,13 @@ namespace Course.Entities
 {
     abstract class Vehicle : IVehicle
     {
-        public string Mark { get; set; }
+        public string Brand { get; set; }
         public string Model { get; set; }
         public int Year { get; set; }
         public double Fip { get; set; }
-        public Vehicle(string mark, string model, int year, double fip)
+        public Vehicle(string brand, string model, int year, double fip)
         {
-            Mark = mark;
+            Brand = brand;
             Model = model;
             Year = year;
             Fip = fip;

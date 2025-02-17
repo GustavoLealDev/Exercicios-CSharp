@@ -13,7 +13,7 @@ namespace Course
 
             do
             {
-                Console.WriteLine("\nMenu:");
+                Console.WriteLine("Menu:");
                 Console.WriteLine("1. Add Car");
                 Console.WriteLine("2. Add Motocycle");
                 Console.WriteLine("3. Add Trucker");

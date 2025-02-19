@@ -2,6 +2,7 @@
 {
     interface IVehicle
     {
+        string Model { get; set; }
         void Details();
     }
 }

@@ -23,7 +23,7 @@ namespace Course
 
                 Directory.CreateDirectory(targetFolder);
 
-                using (StreamWriter sw = File.AppendText(targetFile))
+                using (StreamWriter streamWriter = File.AppendText(targetFile))
                 {
                     foreach (string line in file)
                     {
@@ -35,7 +35,7 @@ namespace Course
 
                         Product product = new Product(name, price, quantity);
 
-                        sw.WriteLine(product.Name + "," + product.Total().ToString("F2"));
+                        streamWriter.WriteLine(product.Name + "," + product.Total().ToString("F2"));
                     }
                 }
             }

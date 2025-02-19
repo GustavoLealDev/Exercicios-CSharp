@@ -19,7 +19,7 @@ namespace Course.Entities
 
         public void RemoveVehicle(string model)
         {
-            IVehicle vehicle = vehicles.FirstOrDefault(x => x != null);
+            IVehicle vehicle = vehicles.FirstOrDefault(v => v.Model.Equals(model, StringComparison.OrdinalIgnoreCase));
             if (vehicles != null)
             {
                 vehicles.Remove(vehicle);

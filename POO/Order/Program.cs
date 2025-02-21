@@ -1,4 +1,6 @@
 ﻿using System;
+using Course.Entities;
+using System;
 using System.Data;
 using System.Globalization;
 using Course.Entities;
@@ -16,13 +18,7 @@ namespace Course
             Console.Write("Email: ");
             string email = Console.ReadLine();
             Console.Write("Birth date (DD/MM/YYYY): ");
-            string dateInput = Console.ReadLine();
-            DateTime birthDate;
-            if (!DateTime.TryParseExact(dateInput, new[] { "dd/MM/yyyy", "MM/dd/yyyy" }, CultureInfo.InvariantCulture, DateTimeStyles.None, out birthDate))
-            {
-                Console.WriteLine("Invalid date format. Please use DD/MM/YYYY");
-                return;
-            }
+            DateTime birthDate = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
             Client client = new Client(name, email, birthDate);
 
@@ -31,7 +27,7 @@ namespace Course
             OrderStatus status = Enum.Parse<OrderStatus>(Console.ReadLine());
 
             Order order = new Order(DateTime.Now, client, status);
-            
+
             Console.WriteLine();
 
             Console.Write("How many items to this order? ");
@@ -39,7 +35,7 @@ namespace Course
 
             Console.WriteLine();
 
-            for (int i = 1; i <= N; i++) 
+            for (int i = 1; i <= N; i++)
             {
                 Console.WriteLine($"Enter #{i} item data: ");
                 Console.Write("Product Name: ");

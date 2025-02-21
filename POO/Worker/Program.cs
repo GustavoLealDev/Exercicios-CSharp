@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Globalization;
 using Course.Entities;
 using Course.Entities.Enums;
@@ -22,7 +22,7 @@ namespace Course
             Department department = new Department(departmentName);
             Worker worker = new Worker(name, level, department, baseSalary);
 
-            Console.WriteLine("How many contracts to this worker? ");
+            Console.Write("How many contracts to this worker? ");
             int N = int.Parse(Console.ReadLine());
 
 
@@ -30,14 +30,7 @@ namespace Course
             {
                 Console.WriteLine($"Enter {i} contract data: ");
                 Console.Write("Date (DD/MM/YYYY) : ");
-                Console.Write("Date (DD/MM/YYYY or MM/DD/YYYY) : ");
-                string dateInput = Console.ReadLine();
-                DateTime date;
-                if (!DateTime.TryParseExact(dateInput, new[] { "dd/MM/yyyy", "MM/dd/yyyy" }, CultureInfo.InvariantCulture, DateTimeStyles.None, out date))
-                {
-                    Console.WriteLine("Invalid date format. Please use DD/MM/YYYY");
-                    return;
-                }
+                DateTime date = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 Console.Write("Value per hour: ");
                 double valuePerHour = double.Parse(Console.ReadLine());
                 Console.Write("Durations (hours) : ");

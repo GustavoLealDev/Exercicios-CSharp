@@ -19,6 +19,11 @@ namespace Course
                 double price = double.Parse(vet[1]);
                 list.Add(new Product(name, price));
             }
+
+            CalculationService calculationService = new CalculationService();   
+             Product Max = calculationService.Max(list);
+
+            Console.WriteLine("Max value: " + Max);
         }
     }
 }

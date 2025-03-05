@@ -6,7 +6,7 @@ namespace Course.Entities
     {
 
         public string Name { get; set; }
-        public DateTime Instant { get; set; }
+        public DateTime Moment { get; set; }
 
         public override int GetHashCode()
         {

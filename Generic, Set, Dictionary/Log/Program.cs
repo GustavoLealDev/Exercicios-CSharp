@@ -22,8 +22,8 @@ namespace Course
                     {
                         string[] line = streamReader.ReadLine().Split(' ');
                         string name = line[0];
-                        DateTime instant = DateTime.Parse(line[1]);
-                        set.Add(new Log { Name = name, Moment = instant });
+                        DateTime moment = DateTime.Parse(line[1]);
+                        set.Add(new Log { Name = name, Moment = moment });
                     }
                     Console.WriteLine("USERS: " + set.Count);
                 }

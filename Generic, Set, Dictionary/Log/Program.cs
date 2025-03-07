@@ -16,16 +16,24 @@ namespace Course
             string path = Console.ReadLine();
 
             {
-                using (StreamReader streamReader = File.OpenText(path))
+                try
                 {
-                    while (!streamReader.EndOfStream)
+                    using (StreamReader streamReader = File.OpenText(path))
                     {
-                        string[] line = streamReader.ReadLine().Split(' ');
-                        string name = line[0];
-                        DateTime moment = DateTime.Parse(line[1]);
-                        set.Add(new Log { Name = name, Moment = moment });
+                        while (!streamReader.EndOfStream)
+                        {
+                            string[] line = streamReader.ReadLine().Split(' ');
+                            string name = line[0];
+                            DateTime moment = DateTime.Parse(line[1]);
+                            set.Add(new Log { Name = name, Moment = moment });
+                        }
+                        Console.WriteLine("USERS: " + set.Count);
                     }
-                    Console.WriteLine("USERS: " + set.Count);
+                }
+                catch (IOException e)
+                {
+                    Console.WriteLine("ERROR!! Try again.");
+                    Console.WriteLine(e.Message);
                 }
             }
         }

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 
 namespace Course
 {
@@ -16,26 +18,34 @@ namespace Course
 
                 Dictionary<string, int> dictionary = new Dictionary<string, int>();
 
-                while (!streamReader.EndOfStream)
+                try
                 {
-
-                    string[] Record = streamReader.ReadLine().Split(',');
-                    string candidate = Record[0];
-                    int votes = int.Parse(Record[1]);
-
-                    if (dictionary.ContainsKey(candidate))
+                    while (!streamReader.EndOfStream)
                     {
-                        dictionary[candidate] += votes;
+
+                        string[] Record = streamReader.ReadLine().Split(',');
+                        string candidate = Record[0];
+                        int votes = int.Parse(Record[1]);
+
+                        if (dictionary.ContainsKey(candidate))
+                        {
+                            dictionary[candidate] += votes;
+                        }
+                        else
+                        {
+                            dictionary[candidate] = votes;
+                        }
                     }
-                    else
+
+                    foreach (var item in dictionary)
                     {
-                        dictionary[candidate] = votes;
+                        Console.WriteLine(item.Key + ": " + item.Value);
                     }
                 }
-
-                foreach (var item in dictionary)
+                catch (IOException e)
                 {
-                    Console.WriteLine(item.Key + ": " + item.Value);
+                    Console.WriteLine("ERROR!! Try again.");
+                    Console.WriteLine(e.Message);
                 }
             }
         }
